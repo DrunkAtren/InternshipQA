@@ -1,0 +1,206 @@
+{
+    "getDataProject":
+    [
+        {
+            "desc" : "All Projects",
+            "path": "projects",
+            "create": "False",
+            "id": "",
+            "statusCodeAdmin" : 200,
+            "statusCodeUser" : 200,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Project By Positive Id",
+            "pathBase": "projects",
+            "pathId": "projects/project-id/",
+            "create": "True",
+            "statusCodeAdmin" : 200,
+            "statusCodeUser" : 200,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Project By Negative Id",
+            "path": "projects/project-id/",
+            "create": "False",
+            "id": -5,
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 400,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Project By String Id",
+            "path": "projects/project-id/",
+            "create": "False",
+            "id": "String",
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 400,
+            "statusCodeUnauthorized" : 403
+        }
+    ],
+    "postDataProject":
+    [
+        {
+            "desc" : "Project",
+            "pathBase": "projects",
+            "pathId": "projects/project-id/",
+            "name": "Project Test Name 0",
+            "startDate" : "2007-12-03",
+            "endDate" : "2007-12-04",
+            "status" : "PENDING",
+            "statusCodeAdmin" : 200,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Project with Wrong startDate",
+            "pathBase": "projects",
+            "pathId": "projects/project-id/",
+            "name": "Project Test Name",
+            "startDate" : "2007",
+            "endDate" : "2007-12-04",
+            "status" : "PENDING",
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Project with Wrong endDate",
+            "pathBase": "projects",
+            "pathId": "projects/project-id/",
+            "name": "Project Test Name",
+            "startDate" : "2007-12-04",
+            "endDate" : "2007",
+            "status" : "PENDING",
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Project with Wrong status",
+            "pathBase": "projects",
+            "pathId": "projects/project-id/",
+            "name": "Project Test Name",
+            "startDate" : "2007-12-04",
+            "endDate" : "2007-12-04",
+            "status" : "xyz",
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        }
+    ],
+    "putDataProject":
+    [
+        {
+            "desc" : "Project Data",
+            "pathBase": "projects",
+            "pathId": "projects/project-id/",
+            "create" : "True",
+            "name": "Project Test Name",
+            "startDate" : "2007-12-03",
+            "endDate" : "2007-12-04",
+            "status" : "PENDING",
+            "statusCodeAdmin" : 200,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Project Data with Wrong startDate",
+            "pathBase": "projects",
+            "pathId": "projects/project-id/",
+            "create" : "True",
+            "name": "Project Test Name",
+            "startDate" : "2007",
+            "endDate" : "2007-12-04",
+            "status" : "PENDING",
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Project Data with Wrong endDate",
+            "pathBase": "projects",
+            "pathId": "projects/project-id/",
+            "create" : "True",
+            "name": "Project Test Name",
+            "startDate" : "2007-12-03",
+            "endDate" : "2007",
+            "status" : "PENDING",
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Project Data with Wrong startDate to endDate",
+            "pathBase": "projects",
+            "pathId": "projects/project-id/",
+            "create" : "True",
+            "name": "Project Test Name",
+            "startDate" : "2008-11-03",
+            "endDate" : "2007-12-03",
+            "status" : "PENDING",
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Project Data with Wrong status",
+            "pathBase": "projects",
+            "pathId": "projects/project-id/",
+            "create" : "True",
+            "name": "Project Test Name",
+            "startDate" : "2007-12-03",
+            "endDate" : "2007-12-04",
+            "status" : "LOL",
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        }
+    ],
+    "deleteDataProject":
+    [
+        {
+            "desc" : "Project with Non-Existing Id",
+            "path": "projects/project-id/",
+            "create": "False",
+            "id": 1000000, 
+            "statusCodeAdmin" : 404,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Project with Positive Id",
+            "pathBase": "projects",
+            "pathId": "projects/project-id/",
+            "create": "True",
+            "statusCodeAdmin" : 200,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Project with Negative Id",
+            "path": "projects/project-id/",
+            "create": "False",
+            "id": -1, 
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Project with String Id",
+            "path": "projects/project-id/",
+            "create": "False",
+            "id": "String", 
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        }
+    ],
+    "createProjectData":
+    {
+        "name": "Project Test Name",
+        "startDate" : "2007-12-03",
+        "endDate" : "2007-12-04",
+        "status" : "PENDING"
+    }
+}

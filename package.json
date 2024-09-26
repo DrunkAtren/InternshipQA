@@ -1,0 +1,25 @@
+{
+  "name": "people-management-aqa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test --reporter=line,allure-playwright",
+    "test_ui": "npx playwright test --ui",
+    "gen_report": "allure generate allure-results -o allure-report --clean",
+    "opn_report": "allure open allure-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.46.1",
+    "@types/node": "^22.5.1",
+    "allure-playwright": "^3.0.2"
+  },
+  "dependencies": {
+    "allure": "^0.0.0",
+    "allure-commandline": "^2.30.0",
+    "playwright": "^1.47.2"
+  }
+}

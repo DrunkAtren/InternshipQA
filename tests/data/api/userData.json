@@ -1,0 +1,207 @@
+{
+    "getAllData":
+    {
+        "desc" : "Get All User Data",
+        "path" : "users/getAll",
+        "body" : {},
+        "statusCodeAdmin" : 200,
+        "statusCodeUser" : 200,
+        "statusCodeUnauthorized" : 403
+    },
+    "getDataUser":
+    [
+        {
+            "desc" : "User By Non-Existing Id",
+            "path": "users/user-id/",
+            "create": "False",
+            "id": 1000000,
+            "statusCodeAdmin" : 404,
+            "statusCodeUser" : 404,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "User By Positive Id",
+            "pathId": "users/user-id/",
+            "pathBase": "users",
+            "create": "True",
+            "statusCodeAdmin" : 200,
+           "statusCodeUser" : 200,
+           "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "User By Negative Id",
+            "path": "users/user-id/",
+            "create": "False",
+            "id": -5,
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 400,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "User By String Id",
+            "path": "users/user-id/",
+            "create": "False",
+            "id": "String",
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 400,
+            "statusCodeUnauthorized" : 403
+        }
+    ],
+    "postDataUser":
+    [
+        {
+           "desc" : "User",
+            "pathId": "users/user-id/",
+            "pathBase": "users",
+            "email": "testUser@gmail.com",
+            "password" : "12345678",
+            "role" : "USER",
+            "firstName": "test",
+            "lastName":"test",
+            "title": "test",
+            "statusCodeAdmin" : 200,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Admin",
+            "pathId": "users/user-id/",
+            "pathBase": "users",
+            "email": "testAdmi@gmail.com",
+            "password" : "12345678",
+            "role" : "ADMIN",
+            "firstName": "test",
+            "lastName":"test",
+            "title": "test",
+            "statusCodeAdmin" : 200,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "User with Wrong email",
+            "pathId": "users/user-id/",
+            "pathBase": "users",
+            "email": "testAdmi111@d.d",
+            "password" : "12345678",
+            "role" : "USER",
+            "firstName": "test",
+            "lastName":"test",
+            "title": "test",
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "User with Wrong role",
+            "pathId": "users/user-id/",
+            "pathBase": "users",
+            "email": "Grzegorz.Brzęczyszczykiewicz@gmail.com",
+            "password" : "12345678",
+            "role" : "String",
+            "firstName": "test",
+            "lastName":"test",
+            "title": "test",
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        }
+    ],
+    "putDataUser":
+    [
+        {
+            "desc" : "User By Id",
+            "pathId": "users/user-id/",
+            "pathBase": "users",
+            "create": "True",
+            "password" : "12345678",
+            "role" : "ADMIN",
+            "firstName": "test",
+            "lastName":"test",
+            "title": "test",
+            "statusCodeAdmin" : 200,
+            "statusCodeUser" : 200,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "User with Wrong Role",
+            "pathId": "users/user-id/",
+            "pathBase": "users",
+            "create": "True",
+            "password" : "12345678",
+            "role" : "WOWOW",
+            "firstName": "test",
+            "lastName":"test",
+            "title": "test",
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 400,
+            "statusCodeUnauthorized" : 403
+        }
+    ],
+    "deleteDataUser":
+    [
+        {
+            "desc" : "User with Non-Existing Id",
+            "path": "users/user-id/",
+            "create": "False",
+            "id" : 10000,
+            "statusCodeAdmin" : 404,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "User with Positive Id",
+            "pathId": "users/user-id/",
+            "pathBase": "users",
+            "create": "True",
+            "statusCodeAdmin" : 200,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+
+        },
+        {
+            "desc" : "User with Negative Id",
+            "path": "users/user-id/",
+            "create": "False",
+            "id": -5, 
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "User with String Id",
+            "path": "users/user-id/",
+            "create": "False",
+            "id": "Word", 
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        }
+    ],
+    "createUserDataAdmin":
+    {
+        "email": "testDataCreateAdmin@gmail.com",
+        "password" : "testDataCreate", 
+        "role" : "USER", 
+        "firstName": "test",
+        "lastName":"Data", 
+        "title": "Create" 
+    },
+    "createUserDataUser":
+    {
+        "email": "testDataCreateUser@gmail.com",
+        "password" : "testDataCreate", 
+        "role" : "USER", 
+        "firstName": "test",
+        "lastName":"Data", 
+        "title": "Create" 
+    },
+    "createUserDataUnauthorized":
+    {
+        "email": "testDataCreateUnauthorized@gmail.com",
+        "password" : "testDataCreate", 
+        "role" : "USER", 
+        "firstName": "test",
+        "lastName":"Data", 
+        "title": "Create" 
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "AuthUser":
+    {
+        "email": "user@email.com",
+         "password" : "user123" 
+    },
+    "AuthAdmin":
+    {
+        "email": "admin@email.com",
+        "password" : "admin123"  
+    }   
+}

@@ -1,0 +1,216 @@
+{
+    "getDataTeam":
+    [
+        {
+            "desc" : "All Teams",
+            "path": "teams",
+            "create": "False",
+            "id": "",
+            "statusCodeAdmin" : 200,
+            "statusCodeUser" : 200,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Team By Positive Id",
+            "path": "teams",
+            "pathId" : "teams/team-id/",
+            "create": "True",
+            "statusCodeAdmin" : 200,
+            "statusCodeUser" : 200,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Team By Negative Id",
+            "path": "teams/team-id/",
+            "create": "False",
+            "id": -5,
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 400,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Team By String Id",
+            "path": "teams/team-id/",
+            "create": "False",
+            "id": "String",
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 400,
+            "statusCodeUnauthorized" : 403
+        }
+    ],
+    "postDataTeam":
+    [
+        {
+            "desc" : "Team",
+            "pathId": "teams/team-id/",
+            "pathBase": "teams",
+            "create" : "True",
+            "name" : "AlphaTest1",
+            "statusCodeAdmin" : 200,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Team with String projectId",
+            "path": "teams",
+            "create" : "False",
+            "name" : "Alpha",
+            "projectId" : "string",
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Team with Negative projectId",
+            "path": "teams",
+            "create" : "False",
+            "name" : "Alpha",
+            "projectId" : -1,
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        }
+    ],
+    "putDataTeam":
+    [
+        {
+            "desc" : "Team",
+            "pathId": "teams/team-id/",
+            "pathBase": "teams",
+            "create": "True",
+            "name" : "AlphaTest2",
+            "statusCodeAdmin" : 200,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Team with Negative projectId",
+            "pathId": "teams/team-id/",
+            "pathBase": "teams",
+            "create": "False",
+            "name" : "AlphaTest",
+            "projectId" : -1000,
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Team with Non-Existing projectId",
+            "pathId": "teams/team-id/",
+            "pathBase": "teams",
+            "create": "False",
+            "name" : "AlphaTest",
+            "projectId" : 1000,
+            "statusCodeAdmin" : 404,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Team with String projectId",
+            "pathId": "teams/team-id/",
+            "pathBase": "teams",
+            "create": "False",
+            "name" : "AlphaTest",   
+            "projectId" : "String",
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        }
+    ],
+    "deleteDataTeam":
+    [
+        {
+            "desc" : "Team with Non-Existing Id",
+            "path": "teams/team-id/",
+            "create": "False",
+            "id": 10000000, 
+            "statusCodeAdmin" : 404,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Team with Positive Id",
+            "pathId": "teams/team-id/",
+            "pathBase": "teams",
+            "create": "True",
+            "statusCodeAdmin" : 200,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Team with Negative Id",
+            "path": "teams/team-id/",
+            "create": "False",
+            "id": -1, 
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Team with String Id",
+            "path": "teams/team-id/",
+            "create": "False",
+            "id": "String", 
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        }
+    ],
+    "postDataAssignUserIntoTeam":
+    [
+        {
+            "desc" : "Assign to Team",
+            "path": "teams/assign-user",
+            "create": "True",
+            "statusCodeAdmin" : 200,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Assign to Team with Negative UserId",
+            "path": "teams/assign-user",
+            "create": "False",
+            "userId": -3,
+            "teamId": 2,
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        },
+        {
+            "desc" : "Assign to Team with Negative TeamId",
+            "path": "teams/assign-user",
+            "create": "False",
+            "userId": 3,
+            "teamId": -2,
+            "statusCodeAdmin" : 400,
+            "statusCodeUser" : 403,
+            "statusCodeUnauthorized" : 403
+        }
+    ],
+    "createTeamData":
+    {
+        "path" : "teams",
+        "name" : "Alpha2",
+        "projectId" : "1"
+    },
+    "createUserData":
+    {
+        "pathBase" : "users",
+        "pathId" : "users/user-id/",
+        "email": "testDataCreate881188@gmail.com",
+        "password" : "testDataCreate", 
+        "role" : "USER", 
+        "firstName": "test",
+        "lastName":"Data", 
+        "title": "Create" 
+    },
+    "createProjectData":
+    {
+        "pathBase" : "projects",
+        "pathId" : "projects/project-id/",
+        "name": "Project Test Name",
+        "startDate" : "2007-12-03",
+        "endDate" : "2007-12-04",
+        "status" : "PENDING"
+    }
+}
